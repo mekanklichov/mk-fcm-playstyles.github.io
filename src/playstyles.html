@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Mobile Playstyles - Full Detailed Breakdown (All 3 Levels)</title>
+    <meta name="description" content="In-depth breakdown of all 22 FC Mobile PlayStyles featuring Level 1 (Silver), Level 2 (Gold), and Level 3 (Violet) perks and recommended squad positions.">
+    <meta property="og:title" content="FC Mobile Playstyles - Full Detailed Breakdown">
+    <meta property="og:description" content="Comprehensive Silver, Gold, and Violet perk analysis for all 22 FC Mobile PlayStyles.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="page-top">
+        <div style="margin-bottom: 1.5rem;">
+            <a href="../index.html" class="details-back-btn">&larr; Back to Main Guide &amp; Tier List</a>
+        </div>
+        <h1 class="header-title">Playstyles Detailed Breakdown</h1>
+        <p class="header-subtitle">Full Level 1 (Silver), Level 2 (Gold) &amp; Level 3 (Violet) Analysis</p>
+    </header>
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav" id="stickyNav" aria-label="Section navigation">
+        <div class="nav-inner">
+            <span class="nav-brand">FCM Playstyles &bull; Details</span>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">&larr; Main Guide</a>
+                <a href="../index.html#tier-list" class="nav-link">Tier List</a>
+                <a href="../index.html#combos" class="nav-link">Combos</a>
+                <a href="../index.html#mechanics" class="nav-link">Card Rules</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- Overview Banner -->
+        <div class="overview-box" id="overview">
+            <div class="overview-text">
+                <h3 class="overview-heading">Performance Level Hierarchy</h3>
+                <p>Unlike console editions, EA SPORTS FC Mobile features 22 distinct PlayStyles built specifically for touch controls and mobile pitch mechanics, split across three performance tiers:</p>
+            </div>
+            <div class="level-badges">
+                <div class="badge-lvl badge-lvl-1">
+                    <span>Level 1 (Silver)</span>
+                </div>
+                <div class="badge-lvl badge-lvl-2">
+                    <span>Level 2 (Gold)</span>
+                </div>
+                <div class="badge-lvl badge-lvl-3">
+                    <span>Level 3 (Violet)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Filter & Search Controls -->
+        <h2 class="section-title" id="explore">All 22 PlayStyles (Full Perks)</h2>
+        <div class="controls-panel">
+            <div class="search-box">
+                <div class="search-wrapper">
+                    <input type="text" id="searchInput" placeholder="Search by playstyle name, perk description, category..." aria-label="Search playstyles">
+                    <button class="search-clear" id="searchClear" aria-label="Clear search" type="button">&times;</button>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <div class="filter-label">Filter Category:</div>
+                <div class="filter-buttons" id="categoryFilters" role="group" aria-label="Category filters">
+                    <button class="btn-filter active" data-cat="ALL">All</button>
+                    <button class="btn-filter" data-cat="FINISHING">Finishing</button>
+                    <button class="btn-filter" data-cat="BALL CONTROL">Ball Control</button>
+                    <button class="btn-filter" data-cat="PASSING">Passing</button>
+                    <button class="btn-filter" data-cat="DEFENDING">Defending</button>
+                    <button class="btn-filter" data-cat="PHYSICAL">Physical</button>
+                    <button class="btn-filter" data-cat="GOALKEEPER">Goalkeeper</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-label">Filter Meta Tier:</div>
+                <div class="filter-buttons" id="tierFilters" role="group" aria-label="Tier filters">
+                    <button class="btn-filter active" data-tier="ALL">All Tiers</button>
+                    <button class="btn-filter" data-tier="S">S-Tier</button>
+                    <button class="btn-filter" data-tier="A">A-Tier</button>
+                    <button class="btn-filter" data-tier="B">B-Tier</button>
+                    <button class="btn-filter" data-tier="C">C-Tier</button>
+                    <button class="btn-filter" data-tier="D">D-Tier</button>
+                </div>
+            </div>
+
+            <button class="btn-clear-all" id="clearAllFilters" type="button">&#10005; Clear All Filters</button>
+        </div>
+
+        <!-- Result Count -->
+        <div class="result-count" id="resultCount" aria-live="polite"></div>
+
+        <!-- Detailed Playstyles Grid -->
+        <div class="playstyles-grid" id="detailedGrid" role="list" aria-label="Detailed playstyle perk cards"></div>
+
+        <div style="text-align: center; margin-top: 3rem; margin-bottom: 2rem;">
+            <a href="../index.html" class="details-back-btn">&larr; Return to Main Guide, Tier List &amp; Combos</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-main">EA SPORTS FC Mobile Playstyles Guide &bull; Detailed Perk Breakdown &amp; Analysis</p>
+            <p class="footer-meta">Last updated: October 2026 &bull; Not affiliated with EA Sports</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="details.js"></script>
+</body>
+</html>

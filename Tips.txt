@@ -1,0 +1,193 @@
+===========================================================================================================================================================================================================
+                                                                     FC MOBILE: TOUCH CONTROL TIPS & SQUAD STRATEGY
+===========================================================================================================================================================================================================
+
+1. TOUCH CONTROL PRO-TIPS (BY PLAYSTYLE)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[FINISHING]
+
+1. Finesse Expert
+   - Tip: Adds lethal curve to consistently beat high-OVR goalkeepers on curved shots. It is particularly effective when cutting inside from the wing to target the far top corner. Utilizing this allows
+     attackers to convert low-probability angles into reliable scoring opportunities.
+   - When activated: Performs a curved shot aiming for the far corner.
+   - How to perform: Swipe down on the shoot button.
+   - Recommended Positions / Roles: ST, LW / RW, CAM
+
+2. Clinical Finisher
+   - Tip: Ideal inside the penalty box for instant reaction speed, guaranteeing pinpoint accuracy across the goalkeeper. It minimizes shot setup delay to slip finishes past encroaching defenders before 
+     they can block. Strikers with this trait excel at capitalizing on tight windows in high-traffic areas.
+   - When activated: Fires a quick, accurate ground shot inside the box.
+   - How to perform: Tap shoot quickly without holding inside the box.
+   - Recommended Positions / Roles: ST
+
+3. Power Shot
+   - Tip: Delivers blistering shot velocity while keeping the ball trajectory low to prevent flying over the crossbar. The extreme ball speed frequently forces goalkeeper parries or leaves netminders 
+     rooted to the spot. It is best deployed when given open space central to the goal from mid-range distances.
+   - When activated: Performing a heavy-velocity power shot on target.
+   - How to perform: Swipe right on the shoot button.
+   - Recommended Positions / Roles: ST, CAM
+
+4. Penalty Expert
+   - Tip: Provides enhanced precision on spot-kicks, allowing you to hit the top corners with absolute certainty. The target reticle remains significantly more stable even under maximum shot power 
+     inputs. This drastically reduces saved penalties during high-stakes competitive shootouts.
+   - When activated: Performing a penalty kick.
+   - How to perform: Swipe towards the desired corner during a penalty kick.
+   - Recommended Positions / Roles: Penalty Taker
+
+5. Chip Shot
+   - Tip: Punishes aggressive, rushing goalkeepers with a high dipping trajectory directly into the open net. The elevated arc creates ideal loft over tall keepers who commit too early on 1v1 
+     breakaways. Timing the release just as the goalkeeper steps off their line guarantees a smooth goal.
+   - When activated: Lobs the ball high over the goalkeeper.
+   - How to perform: Pull up on the shoot button when facing rushing keepers.
+   - Recommended Positions / Roles: ST, LW / RW
+
+6. Dead Ball
+   - Tip: Enables heavy curve around defensive walls and unlocks dipping knuckleball physics for unpredictable set-pieces. The extended targeting line gives precise visual feedback on where the ball 
+     will travel. This makes dead-ball situations near the penalty arch as dangerous as penalty kicks.
+   - When activated: Performing a free kick.
+   - How to perform: Draw a curved path during free kicks.
+   - Recommended Positions / Roles: Free Kick Taker
+
+
+[BALL CONTROL]
+
+7. Trickster
+   - Tip: Chains skill moves without animation delay, making 1v1 wing isolation almost unguardable for defenders. The seamless transitions between moves keep opposition full-backs off balance and unable 
+     to time tackles. It allows creative dribblers to carve out pathing down the flanks with ease.
+   - When activated: Performing skill moves to beat defenders.
+   - How to perform: Tap or swipe sprint button up/down/left/right when possessing.
+   - Recommended Positions / Roles: ST, LW / RW
+
+8. Rapid
+   - Tip: Enables sudden surges of acceleration into open space while maintaining tight ball control on knock-ons. Wingers can rapidly burst past defenders after making a sharp directional cut. This 
+     speed differential makes counter-attacks far more lethal in transition phases.
+   - When activated: Performing a rapid burst of speed while pushing the ball ahead.
+   - How to perform: Hold sprint button / Double-tap sprint into open pitch space.
+   - Recommended Positions / Roles: LW / RW, ST, LM / RM
+
+
+[PASSING]
+
+9. Tiki Taka
+   - Tip: Essential for high-tempo passing systems; ground passes travel faster with minimal receiver miscontrol. Teammates automatically position themselves to receive and release quick one-touch passes 
+     in tight central spaces. This playstyle allows you to easily bypass aggressive pressing defenses.
+   - When activated: Performing ground passes between teammates.
+   - How to perform: Tap / Double-tap pass button.
+   - Recommended Positions / Roles: CM, CAM
+
+10. Bullet Pass
+   - Tip: Slices directly through congested midfield channels, driving fast ground passes straight to your striker's feet. The added speed prevents defensive interceptions across long distances without bouncing unpredictably. It serves as an excellent tool for initiating sudden vertical attacks from deep.
+   - When activated: Perform driven ground passes.
+   - How to perform: Swipe pass button left.
+   - Recommended Positions / Roles: CM, CDM
+
+11. Whipped Cross
+   - Tip: Enables dangerous early crosses from deep wide positions that arc away from the keeper onto your forward's head. The sharp curve makes it difficult for defenders to clear while catching 
+     goalkeepers in no-man's-land. Pairing this with target-man strikers maximizes aerial scoring output.
+   - When activated: Delivers a curving, whipped cross into the penalty box.
+   - How to perform: Swipe pass button up / right when crossing from deep wide positions.
+   - Recommended Positions / Roles: LM / RM, LB / RB, Corner Taker
+
+12. Incisive Through Pass
+   - Tip: Curves passes precisely between center-backs into open grass, matching the exact sprint path of running wingers. The weighted delivery allows receivers to take shots on the move without losing
+     momentum. It consistently unlocks low-block defenses through subtle passing angles.
+   - When activated: Performing through ball into defensive gaps.
+   - How to perform: Tap / Double-tap through pass button.
+   - Recommended Positions / Roles: CAM
+
+13. Driven Lob Through
+   - Tip: Floats balls cleanly over compact low-block defenses without giving the opponent keeper time to collect. The backspin on the ball causes it to settle quickly upon landing, enabling immediate 
+     control for your attacker. It provides an effective alternative when ground passing lanes are fully blocked.
+   - When activated: Lofts a ball over defensive lines into space.
+   - How to perform: Pull up on the through pass button.
+   - Recommended Positions / Roles: CAM, CM
+
+
+[DEFENDING]
+
+14. Anticipate
+   - Tip: The undisputed meta defending trait. Greatly extends standing tackle radius and secures ball possession directly. Instead of bouncing back to attackers, successful tackles leave the ball glued 
+     to your defender's feet. This drastically cuts down on second-chance opportunities for the opposition.
+   - When activated: Performing a standing tackle against opponent.
+   - How to perform: Press tackle button or jockey near opponent while defending.
+   - Recommended Positions / Roles: CB, CDM, LB / RB
+
+15. Guardian
+   - Tip: Significantly increases the effectiveness of heavy shoulder jostles and manual tackles, forcing opponent stumble animations. Defenders can physically push off attackers to regain control during 
+     side-by-side sprints. It is crucial for containing strong strikers trying to hold up play.
+   - When activated: Performing a hard tackle against opponent.
+   - How to perform: Swipe left on the tackle button or jockey near opponent while defending.
+   - Recommended Positions / Roles: CB, CDM
+
+16. Slide Tackle
+   - Tip: Expands slide tackle ground coverage while dramatically cutting recovery lag, allowing quick recovery if bypassed. Defenders travel further across the turf to block last-second shots or 
+     goal-bound crosses. The reduced recovery time ensures your defense isn't left out of position if a slide fails.
+   - When activated: Performing a sliding tackle to intercept passes or tackle opponents.
+   - How to perform: Tap slide tackle button near opponents.
+   - Recommended Positions / Roles: CB, LB / RB
+
+
+[PHYSICAL]
+
+17. Accelerator
+   - Tip: Gives wide players instant burst speed when tracking back or initiating overlapping runs off the ball. It allows full-backs to recover quickly after attacking pushes to prevent wing breakaways. 
+     The extra initial speed makes off-ball movement noticeably more dynamic.
+   - When activated: Performing a sprint during off-ball runs.
+   - How to perform: Hold sprint button when tracking back or making overlapping runs off-ball.
+   - Recommended Positions / Roles: LM / RM, LB / RB
+
+18. Relentless
+   - Tip: Saves stamina across the full match and boosts halftime energy recovery for late-game effectiveness. Midfielders can maintain high-intensity pressing and box-to-box runs well into the final 
+     minutes. This prevents late-game stat degradation and keeps performance levels consistent.
+   - When activated: Before kick off of 2nd half / extra times.
+   - How to perform: Passive effect; triggers automatically during play and at halftime / extra times.
+   - Recommended Positions / Roles: CM, CDM, LB / RB
+
+19. Bruiser
+   - Tip: Automatically overpowers opponent players during 50/50 shoulder battles, shielding possession reliably. Players equipped with this trait can push opponent off the ball without incurring foul 
+     calls. It provides a distinct physical edge when defending or shielding in the box.
+   - When activated: During side-by-side physical battles.
+   - How to perform: Run side-by-side and engage in 50/50 physical duels.
+   - Recommended Positions / Roles: CB, CDM, ST
+
+20. Precision Header
+   - Tip: Directs attacking and defensive headers with high velocity and downward trajectory on aerial balls. Headers naturally stay lower, preventing missed chances over the crossbar during corners. 
+     It also enhances defensive clearances from opponent set-pieces to clear danger zones quickly.
+   - When activated: Performing a header toward goal or during clearance.
+   - How to perform: Tap shoot or pass button during aerial contests on corners and crosses or during clearance.
+   - Recommended Positions / Roles: CB, ST
+
+
+[GOALKEEPER]
+
+21. Deflector
+   - Tip: Forces goalkeeper deflection saves away from the central danger area toward the touchlines, eliminating rebound goals. Goalkeepers consistently push powerful shots wide to safety rather than 
+     spilling them in front of the net. This significantly mitigates tap-in goals from follow-up shots.
+   - When activated: During GK saves.
+   - How to perform: Triggers automatically when keeper makes reflex saves.
+   - Recommended Positions / Roles: GK
+
+22. Rush Out
+   - Tip: Rushes the goalkeeper out at top speed to close down 1v1 angles before opponent forwards can compose their shot. The rapid acceleration reduces the attacker's time to evaluate shooting options 
+     or execute skill moves. It provides vital protection against direct through-ball attacks.
+   - When activated: Charge GK out aggressively toward the ball.
+   - How to perform: Pull down on the 2nd defender button.
+   - Recommended Positions / Roles: GK
+
+
+2. TACTICAL SQUAD COMBINATIONS
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- Winger (LW/RW):            Trickster + Rapid + Finesse Expert
+- Striker (ST):              Finesse Expert + Rapid + Clinical Finisher
+- Attacking Midfield (CAM):  Power Shot + Finesse Expert + Incisive Through Pass
+- Central Midfield (CM):     Tiki Taka + Bullet Pass + Relentless
+- Wide Midfield (LM/RM):     Accelerator + Rapid + Whipped Cross
+- Defensive Midfield (CDM):  Anticipate + Bruiser + Relentless
+- Center-Back (CB):          Anticipate + Bruiser + Precision Header
+- Full-Back (LB/RB):         Accelerator + Anticipate + Relentless
+- Goalkeeper (GK):           Deflector + Rush Out
+===========================================================================================================================================================================================================
+
+
+
+

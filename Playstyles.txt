@@ -1,0 +1,197 @@
+===========================================================================================================================================================================================================
+                                                                                       FC MOBILE: ULTIMATE PLAYSTYLES GUIDE
+===========================================================================================================================================================================================================
+
+1. OVERVIEW & TIERS
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Unlike console editions, EA SPORTS FC Mobile features 22 distinct PlayStyles built specifically for touch controls and mobile pitch mechanics.
+
+PlayStyles are split into three performance levels:
+- Level 1 (Silver): Provides base enhancements to passing, shooting, physicality, or defensive actions.
+- Level 2 (Gold): Unlocks maximum animation speed, extended range, and secondary effects (e.g., causing opponents to stumble).
+- Level 3 (Violet): 
+
+
+2. META TIER LIST
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[S-TIER] [color: platinum]         OVERPOWERED      : Trickster, Rapid, Finesse Expert, Anticipate
+[A-TIER] [color: gold]             META & ESSENTIAL : Deflector, Accelerator, Tiki Taka, Bruiser
+[B-TIER] [color: silver]           SITUATIONAL      : Clinical Finisher, Rush Out, Relentless, Bullet Pass, Power Shot, Incisive Through Pass, Driven Lob Through Pass
+[C-TIER] [color: bronze]           AVERAGE          : Whipped Cross, Slide Tackle, Precision Header
+[D-TIER] [color: 90% white gray]   USELESS          : Chip Shot, Penalty Expert, Guardian, Dead Ball
+
+
+3. DETAILED BREAKDOWN BY CATEGORY
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[FINISHING]
+
+1. Finesse Expert
+   - Player can curl finesse shots past the keeper with great accuracy.
+   - Silver (Lvl 1): Performs finesse shots with slight faster ball speed, additional curve and improved accuracy.
+   - Gold (Lvl 2): Performs finesse shots with greater ball speed, additional curve and improved accuracy.
+   - Violet (Lvl 3): Performs finesse shots much with even greater ball speed, additional curve and improved accuracy.
+
+2. Clinical Finisher
+   - Player can accurately place the ball in the net from close to mid-range shooting distance.
+   - Silver (Lvl 1): Increases accuracy and shot speed for regular shots from mid-to close range.
+   - Gold (Lvl 2): Further increases accuracy and shot speed for regular shots from mid-to close range.
+   - Violet (Lvl 3): Exceptionally increases accuracy and shot speed for regular shots from mid-to close range.
+
+3. Power Shot
+   - Player can take powerful shots with high precision
+   - Silver (Lvl 1): Increases accuracy and shot speed for power shots.
+   - Gold (Lvl 2): Further increases accuracy and shot speed for power shots, while also providing faster kick animation and lower elevation to keep shot on target.
+   - Violet (Lvl 3): Greatly increases accuracy and shot speed for power shots, while also providing even faster kick animation and lower elevation to keep shot on target.
+
+4. Penalty Expert
+   - Player has exceptional accuracy at penalty kicks.
+   - Silver (Lvl 1): Increases accuracy and shot speed for penalty kicks.
+   - Gold (Lvl 2): Further increases accuracy and shot speed for penalty kicks, while also showing a red dot of the kick target after your swipe.
+   - Violet (Lvl 3): Greatly increases accuracy and shot speed for penalty kicks, while also showing a red dot of the kick target after your swipe.
+
+5. Chip Shot
+   - Player has exceptional skill at chipping the goalkeeper.
+   - Silver (Lvl 1): Chip shots have an unique dipping trajectory with increased accuracy and shot speed.
+   - Gold (Lvl 2): Chip shots have an unique dipping trajectory with further increased accuracy and shot speed.
+   - Violet (Lvl 3): Chip shots have an unique dipping trajectory with greatly increased accuracy and shot speed.
+
+6. Dead ball 
+   - Player who is known for performing direct free kick shooting with great accuracy.
+   - Silver (Lvl 1): Increases accuracy and shot speed for free kick shots.
+   - Gold (Lvl 2): Further increases accuracy and shot speed, plus enhanced trajectory curvature for free kick shots at long range, while also showing a red dot of the kick target after your swipe.
+   - Violet (Lvl 3):Also applies a new shot type that allows the ball to travel at high speed with sudden dips and unpredictable movement.
+
+
+[BALL CONTROL]
+
+7. Trickster
+   - Player can more effectively perform skill moves and beat defenders in 1v1 situations.
+   - Silver (Lvl 1): Performs skill moves with increased speed while keeping the ball close.
+   - Gold (Lvl 2): Performs skill moves with even more speed while keeping the ball close.
+   - Violet (Lvl 3): Performs skill moves with much more speed while staying tight on the ball.
+
+8. Rapid
+   - Player has a more explosive acceleration for sprint dribble and knock-ons.
+   - Silver (Lvl 1): Faster acceleration when sprint dribbling.
+   - Gold (Lvl 2): Even faster acceleration when sprint dribbling and knock-ons, with better ball control ability.
+   - Violet (Lvl 3): Super faster acceleration when sprint dribbling and knock-ons, with even better ball control ability.
+
+[PASSING]
+
+9. Tiki Taka
+   - Player is able to perform more accurate and faster ground passes.
+   - Silver (Lvl 1): Ground passes are faster and highly accurate.
+   - Gold (Lvl 2): Ground passes & dinked passes are even faster and more accurate.
+   - Violet (Lvl 3): Ground passes & dinked passes are significantly faster and accurate, with reduced trap error of the receiver.
+
+10. Bullet Pass
+   - Player is able to perform more accurate and faster driven ground passes.
+   - Silver (Lvl 1): Increases accuracy and pass speed, without impacting the trapping difficulty of the receiver.
+   - Gold (Lvl 2): Greatly increases accuracy and pass speed, without impacting the trapping difficulty of the receiver.
+   - Violet (Lvl 3): Significantly increases accuracy and pass speed, without impacting the trapping difficulty of the receiver.
+
+11. Whipped Cross
+   - Player can perform high-speed whipped crosses into the box.
+   - Silver (Lvl 1):  Lob crosses will have increased accuracy and curve. Plus reduced error when taking corner kicks.
+   - Gold (Lvl 2):  Lob and ground crosses are faster, with further increased accuracy and curve. Plus reduced error when taking corner kicks.
+   - Violet (Lvl 3): All crosses are significanlty faster, with greatly increased accuracy and curve. Also increases corner kick accuracy. Plus reduced error when taking corner kicks.
+
+12. Incisive through pass 
+   - Player who is known for making defense-splitting through passes for a teammate to run onto. 
+   - Silver (Lvl 1): Ground Through Passes are more accurate, and travel at a higher speed. 
+   - Gold (LvI 2): Ground Through Passes and Dinked Ground Through Passes are even more accurate, and travel at a higher speed. Plus reduced trap error of the receiver. 
+   - Violet (Lvl 3):  Ground Through Passes and Dinked Ground Through Passes are significantly more accurate, with more impact on user control, and travel at a higher speed. Plus reduced trap error of the
+     receiver.
+
+13. Driven lob through 
+   - Player who is known for performing accurate lobbed through passes to teammates. 
+   - Silver (Lvl 1): Lob through passes are more accurate, also travel at a slightly higher speed. 
+   - Gold (LvI 2): Lob through passes are even more accurate, also travel at a higher speed. Plus reduced trap error of the receiver.
+   - Violet (Lvl 3): Lob through passes are much more accurate, also travel at an even higher speed. Plus reduced trap error of the receiver.
+
+[DEFENDING]
+
+14. Anticipate
+   - Player has a higher stand tackle proficiency and success rate.
+   - Silver (Lvl 1): Improved standing tackle range, speed and the ability to stop the ball directly at their feet.
+   - Gold (Lvl 2): Much improved standing tackle range, speed and the ability to stop the ball directly at their feet. 
+   - Violet (Lvl 3): Also increases chance of triggering opponent stumble or fall.
+
+15. Guardian
+   - Player has a higher hard tackle proficiency and success rate.
+   - Silver (Lvl 1): Improved hard tackle range, speed and the ability to stop the ball directly at their feet.
+   - Gold (Lvl 2): Much improved hard tackle range, speed and the ability to stop the ball directly at their feet. 
+   - Violet (Lvl 3): Also increases the chance of triggering opponent stumble or fall.
+
+16. Slide tackle 
+   - Player who is known for often performing slide tackles. 
+   - Silver (Lvl 1): Improved slide tackle coverage, plus quicker execution and faster recovery. 
+   - Gold (Lvl 2): Greatly improved slide tackle coverage, plus even quicker execution and faster recovery. Also grants better ball control when performing a slide tackle.
+   - Violet (Lvl 3): Significantly improved slide tackle coverage, plus much quicker execution and faster recovery. Also grants better ball control when performing a slide tackle.
+
+[PHYSICAL]
+
+17. Accelerator
+   - Player is able to have a quick burst of speed when accelerating without the ball .
+   - Silver (Lvl 1): Accelerates faster without the ball.
+   - Gold (Lvl 2): Accelerates even faster without the ball.
+   - Violet (Lvl 3): Accelerates exceptionally fast without the ball.
+
+18. Relentless
+   - Player has great stamina and is able to make many runs without getting tired easily.
+   - Silver (Lvl 1): Reduces fatigue loss during play.
+   - Gold (Lvl 2): Reduces fatigue loss during play and increases stamina recovery during halftime.
+   - Violet (Lvl 3): Greatly reduces fatigue loss during play and greatly increases stamina recovery during halftime.
+
+19. Bruiser
+   - Player has greater strength during physical battles, both at protecting the ball while dribbling or contesting the opponent during a jostle.
+   - Silver (Lvl 1): Increases strength during physical battles.
+   - Gold (Lvl 2): Greatly increases strength during physical battles.
+   - Violet (Lvl 3): Significantly increases strength during physical battles.
+
+20. Precision Header
+   - Player has exceptional performance when heading the ball.
+   - Silver (Lvl 1): Header shot, passes and clearances are slightly faster and more accurate.
+   - Gold (Lvl 2): Header shots, passes and clearances are faster and even more accurate.
+   - Violet (Lvl 3): Header shots, passes and clearances are exceptionally fast and very accurate.
+
+
+[GOALKEEPER]
+
+21. Deflector
+   - Goalkeeper has the ability to deflect the ball far, wide and into safer areas.
+   - Silver (Lvl 1): Performs deflection saves into safer areas with increased ball speed.
+   - Gold (Lvl 2): Performs deflection saves into safer areas with even faster ball speed.
+   - Violet (Lvl 3):  Performs deflection saves into safer areas or towards free teammates with even greater ball speed.
+
+22. Rush Out
+   - Goalkeeper has the ability to quickly rush out of goal to pressure the opponent.
+   - Silver (Lvl 1): GKs will have increased speed during rush.
+   - Gold (Lvl 2): GKs will have more increased speed and better auto tackle ability during rush.
+   - Violet (Lvl 3): GKs will have greatly increased speed and better auto tackle ability during rush.
+
+
+4. RECOMMENDED PLAYSTYLE COMBINATIONS
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- Winger (LW/RW): 		Trickster + Rapid + Finesse Expert
+- Striker (ST): 		Finesse Expert + Rapid + Clinical Finisher
+- Attacking Midfield (CAM): 	Power Shot + Finesse Expert + Incisive Through Pass
+- Central Midfield (CM): 	Tiki Taka + Bullet Pass + Relentless
+- Wide Midfield (LM/RM): 	Accelerator + Rapid + Whipped Cross
+- Defensive Midfield (CDM): 	Anticipate + Bruiser + Relentless
+- Center-Back (CB): 		Anticipate + Bruiser + Precision Header
+- Full-Back (LB/RB): 		Accelerator + Anticipate + Relentless
+- Goalkeeper (GK): 		Deflector + Rush Out
+
+
+5. PLAYER'S PLAYSTYLE OWNING MECHANISM
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- Playstyles are pre-assigned to card and cannot be changed.
+- Exclusive Box cards (P2W) will have 1 violet + 1 silver or 2 gold playstyles.
+- Maximum OVR card will have 1 violet or 1 gold + 1 silver playstyle.
+- Maximum - 1 and Maximum - 2 OVR card will have 1 gold or 2 silver playstyle.
+- Maximum - 3 OVR card will have 1 silver playstyle
+
+- Current Maximum OVR is dynamic in game, usually rises by +2 or +3 in every 2-3 events.
+===========================================================================================================================================================================================================
