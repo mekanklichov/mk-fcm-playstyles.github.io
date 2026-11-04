@@ -39,6 +39,7 @@ Features an **Interactive PlayStyles Meta Tier Guide**, category and tier filter
 * **Category & Tier Filter Controls**: Filter simultaneously by category pills and tier pills with instant result counts and quick reset.
 * **Interactive Navigation**: Sticky header navigation, deep-linking, smooth scrolling, and back-to-top button.
 * **Tactical Squad Combinations**: Optimal PlayStyle configurations for every pitch position (LW, RW, ST, CAM, CM, LM, RM, CDM, CB, LB, RB, GK) with official logos and tier badges.
+* **iOS Liquid Glass Design**: Full Apple Liquid Glass styling featuring 40px blur, 200% saturation boost, razor-sharp top specular reflections (`inset 0 1px 0`), 0.5px sub-pixel borders, and squircle geometry across all pages.
 * **Zero Dependencies**: 100% pure vanilla HTML, modern CSS, and JavaScript. Runs directly from local filesystem (`file://`) with zero build steps or servers required.
 
 ---
@@ -228,13 +229,14 @@ node build_site.js
     - **A-Tier**: Champion Gold (`#fbbf24`)
     - **B-Tier**: Metallic Silver (`#9ca3af`)
     - **C-Tier**: Vintage Bronze (`#cd7f32`)
-    - **D-Tier**: Soft Titanium (`#e5e7eb`)
+    - **D-Tier**: Dark Crimson Red (`#7f1d1d`, `#991b1b`)
 * **Typography**:
   - Display & Headings: [Teko](https://fonts.google.com/specimen/Teko) for bold sports graphics.
   - Body & UI: [Inter](https://fonts.google.com/specimen/Inter) for clean mobile legibility.
-* **Micro-Interactions**:
-  - Frosted glass cards with `backdrop-filter: blur(12px)`.
-  - Neon hover glows, subtle elevations (`transform: translateY(-4px)`), and scroll transitions.
+* **Micro-Interactions & iOS Liquid Glass**:
+  - Full Apple Liquid Glass effect: `backdrop-filter: blur(40px) saturate(200%) brightness(1.08)`.
+  - Specular rim lighting: `inset 0 1px 0 0 rgba(255, 255, 255, 0.45)`, soft 0.5px borders, and top gleam gradients (`::after`).
+  - Neon hover glows, smooth lift transitions (`transform: translateY(-4px)`), and scroll animations.
 
 ---
 
