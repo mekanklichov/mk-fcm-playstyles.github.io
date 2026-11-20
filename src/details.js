@@ -294,15 +294,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const searchClear = document.getElementById('searchClear');
-    if (searchClear) {
+    const searchInput = document.getElementById('searchInput');
+
+    if (searchClear && searchInput) {
         searchClear.addEventListener('click', () => {
-            const input = document.getElementById('searchInput');
-            input.value = '';
+            searchInput.value = '';
             searchQuery = '';
             renderDetailedCards();
-            input.focus();
+            searchInput.focus();
         });
     }
+
+    // Keyboard shortcut: '/' to focus search, 'Escape' to clear
+    document.addEventListener('keydown', (e) => {
+        if (e.key === '/' && document.activeElement !== searchInput && !['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) {
+            e.preventDefault();
+            if (searchInput) {
+                searchInput.focus();
+                searchInput.select();
+            }
+        } else if (e.key === 'Escape' && document.activeElement === searchInput) {
+            if (searchInput.value) {
+                searchInput.value = '';
+                searchQuery = '';
+                renderDetailedCards();
+            }
+            searchInput.blur();
+        }
+    });
 
     const clearAllBtn = document.getElementById('clearAllFilters');
     if (clearAllBtn) {

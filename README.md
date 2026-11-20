@@ -31,15 +31,16 @@ Features an **Interactive PlayStyles Meta Tier Guide**, category and tier filter
 ## 🌟 Features
 
 * **All 22 PlayStyles Analyzed**: Fully categorized across 6 tactical roles (*Finishing*, *Ball Control*, *Passing*, *Defending*, *Physical*, and *Goalkeeper*).
-* **Meta Tier Rankings (S to D)**: Graded by competitive head-to-head (H2H) impact on mobile touch controls, from S-Tier (*Overpowered*) to D-Tier (*Useless*).
+* **Meta Tier Rankings (S to D)**: Graded by competitive head-to-head (H2H) impact on mobile touch controls, from S-Tier (*Overpowered*) to D-Tier (*Useless* with dark red styling).
+* **Dual Light / Dark Mode with Persistence**: Seamless theme toggle with animated Sun/Moon morphing icon, `localStorage` persistence, and automatic system OS `prefers-color-scheme` matching.
+* **Full Apple iOS Liquid Glass UI**: Multi-layer frosted glass system (`blur(40px) saturate(200%) brightness(1.08)`), dual-rim specular highlights (`inset 0 1px 0`), 0.5px sub-pixel borders, squircle geometry, and diagonal **liquid light sheen sweep** animations on card hover.
 * **3-Level Perk Progression**: Comprehensive breakdown of Silver (Level 1), Gold (Level 2), and Violet (Level 3) perks for every PlayStyle.
 * **Dedicated Deep-Dive Pages**: 22 standalone pages (`src/playstyles/*.html`) detailing tactical meta fit, recommended positions, gesture executions, pro-tips, and video previews.
 * **Gesture Execution Guide**: Practical touch control instructions for every trait (swipes, taps, and skill triggers).
-* **Instant Diacritic-Resilient Search**: Real-time filtering across PlayStyle names, descriptions, categories, and perk benefits.
+* **Instant Diacritic-Resilient Search & Shortcuts**: Real-time filtering across names, descriptions, categories, and perks. Press `/` anywhere to focus search and `Esc` to clear.
 * **Category & Tier Filter Controls**: Filter simultaneously by category pills and tier pills with instant result counts and quick reset.
-* **Interactive Navigation**: Sticky header navigation, deep-linking, smooth scrolling, and back-to-top button.
 * **Tactical Squad Combinations**: Optimal PlayStyle configurations for every pitch position (LW, RW, ST, CAM, CM, LM, RM, CDM, CB, LB, RB, GK) with official logos and tier badges.
-* **iOS Liquid Glass Design**: Full Apple Liquid Glass styling featuring 40px blur, 200% saturation boost, razor-sharp top specular reflections (`inset 0 1px 0`), 0.5px sub-pixel borders, and squircle geometry across all pages.
+* **High-Level Accessibility**: Includes `@media (prefers-reduced-transparency: reduce)` and `@media (prefers-reduced-motion: reduce)` fallbacks, alongside WCAG AA contrast compliance for both dark and light modes.
 * **Zero Dependencies**: 100% pure vanilla HTML, modern CSS, and JavaScript. Runs directly from local filesystem (`file://`) with zero build steps or servers required.
 
 ---
@@ -166,9 +167,10 @@ Playstyles site/
 │   │   ├── anticipate.html       # Standalone page for Anticipate
 │   │   └── ... (20 more pages)
 │   ├── playstyles.html           # Full Catalog Overview (All 22 PlayStyles)
+│   ├── theme.js                  # Theme Controller (Light/Dark mode, storage & system sync)
 │   ├── script.js                 # Main page controller, search & filter logic
 │   ├── details.js                # Catalog page controller & deep-linking handler
-│   └── style.css                 # Pitch-themed responsive dark design system & animations
+│   └── style.css                 # Dual-theme iOS Liquid Glass design system & animations
 ├── Playstyles.txt                # Raw source reference notes & gameplay mechanics documentation
 ├── Tips.txt                      # Dynamic touch control pro-tips & recommended positions
 ├── build_site.js                 # Automation script syncing Playstyles.txt & Tips.txt to web
@@ -214,29 +216,35 @@ node build_site.js
 ### What `build_site.js` Does:
 1. Parses `Playstyles.txt` to extract meta tiers, categories, and 3-level perk descriptions.
 2. Parses `Tips.txt` to extract recommended squad positions, activation moments, touch gesture executions, and gameplay tips.
-3. Automatically generates all 22 individual HTML detail pages inside `src/playstyles/` with correct relative asset paths and breadcrumb navigation.
+3. Automatically generates all 22 individual HTML detail pages inside `src/playstyles/` with correct relative asset paths, breadcrumb navigation, and theme toggle controls.
 4. Synchronizes and updates the embedded dataset in `src/script.js`.
 
 ---
 
 ## 🎨 Design System & Aesthetics
 
-* **Color Palette**:
-  - Background: Pitch-dark Obsidian (`#050811`, `#121826`) with stadium green and violet radial ambient lighting.
-  - Accents: Electric Pitch Green (`#00ff87`), Neon Cyan (`#00e5ff`), and Violet (`#c084fc`).
-  - Tier Colors:
-    - **S-Tier**: Obsidian Black / Dark Charcoal (`#18181b`)
-    - **A-Tier**: Champion Gold (`#fbbf24`)
-    - **B-Tier**: Metallic Silver (`#9ca3af`)
-    - **C-Tier**: Vintage Bronze (`#cd7f32`)
-    - **D-Tier**: Dark Crimson Red (`#7f1d1d`, `#991b1b`)
+* **Dual-Theme Support (Dark & Light)**:
+  - **Dark Mode (Default)**: Pitch-dark Obsidian (`#050811`, `#121826`) with stadium green and violet ambient radial lighting.
+  - **Light Mode**: Apple frosted glass aesthetic (`#f0f4f9`) with soft emerald and lilac ambient glows, dark slate typography (`#0f172a`), and high-contrast WCAG AA readability.
+  - **Animated iOS Pill Switcher**: Sun/Moon icon morphing rotation animation with instant `localStorage` persistence and `prefers-color-scheme` synchronization.
+* **Apple iOS Liquid Glass UI**:
+  - Multi-layer frosted glass: `backdrop-filter: blur(40px) saturate(200%) brightness(1.08)`.
+  - Specular rim lighting: `inset 0 1px 0 0 rgba(255, 255, 255, 0.45)`, soft sub-pixel 0.5px borders, and squircle border geometry (`20px` to `24px`).
+  - **Hover Sheen Sweep**: Diagonal liquid light sweep (`linear-gradient(105deg, ...)` via `::after`) gliding smoothly across cards on hover.
+  - Tactile spring physics: Fluid `cubic-bezier(0.16, 1, 0.3, 1)` easing and active click compressions (`scale(0.96)`).
+* **Tier Color System**:
+  - **S-Tier**: Obsidian Black / Charcoal (`#18181b` / `#1e293b`)
+  - **A-Tier**: Champion Gold (`#fbbf24` / `#d97706`)
+  - **B-Tier**: Metallic Silver (`#9ca3af` / `#64748b`)
+  - **C-Tier**: Vintage Bronze (`#cd7f32` / `#b45309`)
+  - **D-Tier**: Dark Crimson Red (`#7f1d1d` / `#991b1b`)
 * **Typography**:
   - Display & Headings: [Teko](https://fonts.google.com/specimen/Teko) for bold sports graphics.
   - Body & UI: [Inter](https://fonts.google.com/specimen/Inter) for clean mobile legibility.
-* **Micro-Interactions & iOS Liquid Glass**:
-  - Full Apple Liquid Glass effect: `backdrop-filter: blur(40px) saturate(200%) brightness(1.08)`.
-  - Specular rim lighting: `inset 0 1px 0 0 rgba(255, 255, 255, 0.45)`, soft 0.5px borders, and top gleam gradients (`::after`).
-  - Neon hover glows, smooth lift transitions (`transform: translateY(-4px)`), and scroll animations.
+* **Accessibility**:
+  - Focus rings with outline offsets for keyboard navigation.
+  - OS-level transparency reduction support (`prefers-reduced-transparency`).
+  - Motion reduction support (`prefers-reduced-motion`).
 
 ---
 
