@@ -263,6 +263,14 @@ const playstylesData = [
             }
         }
 
+        function syncMainFilterButtons(selector, isSelected) {
+            document.querySelectorAll(selector).forEach(button => {
+                const selected = isSelected(button);
+                button.classList.toggle('active', selected);
+                button.setAttribute('aria-pressed', String(selected));
+            });
+        }
+
         // Show/hide the "Clear All Filters" button
         function updateClearAllVisibility() {
             const btn = document.getElementById('clearAllFilters');
@@ -399,6 +407,8 @@ const playstylesData = [
             }, 300);
 
             // ── Initial render (observer is ready now) ──
+            syncMainFilterButtons('#categoryFilters .btn-filter', button => button.getAttribute('data-cat') === activeCategory);
+            syncMainFilterButtons('#tierFilters .btn-filter', button => button.getAttribute('data-tier') === activeTier);
             renderCards();
 
             // Observe the initial dynamic cards too
@@ -408,21 +418,19 @@ const playstylesData = [
 
             // ── Filter handlers ──
             document.getElementById('categoryFilters').addEventListener('click', (e) => {
-                if (e.target.classList.contains('btn-filter')) {
-                    document.querySelectorAll('#categoryFilters .btn-filter').forEach(btn => btn.classList.remove('active'));
-                    e.target.classList.add('active');
-                    activeCategory = e.target.getAttribute('data-cat');
-                    renderCards();
-                }
+                const button = e.target.closest('.btn-filter');
+                if (!button) return;
+                activeCategory = button.getAttribute('data-cat');
+                syncMainFilterButtons('#categoryFilters .btn-filter', item => item === button);
+                renderCards();
             });
 
             document.getElementById('tierFilters').addEventListener('click', (e) => {
-                if (e.target.classList.contains('btn-filter')) {
-                    document.querySelectorAll('#tierFilters .btn-filter').forEach(btn => btn.classList.remove('active'));
-                    e.target.classList.add('active');
-                    activeTier = e.target.getAttribute('data-tier');
-                    renderCards();
-                }
+                const button = e.target.closest('.btn-filter');
+                if (!button) return;
+                activeTier = button.getAttribute('data-tier');
+                syncMainFilterButtons('#tierFilters .btn-filter', item => item === button);
+                renderCards();
             });
 
             document.getElementById('searchInput').addEventListener('input', (e) => {
@@ -467,14 +475,10 @@ const playstylesData = [
                 clearAllBtn.addEventListener('click', () => {
                     // Reset category
                     activeCategory = 'ALL';
-                    document.querySelectorAll('#categoryFilters .btn-filter').forEach(btn => {
-                        btn.classList.toggle('active', btn.getAttribute('data-cat') === 'ALL');
-                    });
+                    syncMainFilterButtons('#categoryFilters .btn-filter', btn => btn.getAttribute('data-cat') === 'ALL');
                     // Reset tier
                     activeTier = 'ALL';
-                    document.querySelectorAll('#tierFilters .btn-filter').forEach(btn => {
-                        btn.classList.toggle('active', btn.getAttribute('data-tier') === 'ALL');
-                    });
+                    syncMainFilterButtons('#tierFilters .btn-filter', btn => btn.getAttribute('data-tier') === 'ALL');
                     // Reset search
                     const input = document.getElementById('searchInput');
                     input.value = '';
@@ -559,12 +563,8 @@ const playstylesData = [
                 const searchInput = document.getElementById('searchInput');
                 if (searchInput) searchInput.value = '';
 
-                document.querySelectorAll('#categoryFilters .btn-filter').forEach(btn => {
-                    btn.classList.toggle('active', btn.getAttribute('data-cat') === 'ALL');
-                });
-                document.querySelectorAll('#tierFilters .btn-filter').forEach(btn => {
-                    btn.classList.toggle('active', btn.getAttribute('data-tier') === 'ALL');
-                });
+                syncMainFilterButtons('#categoryFilters .btn-filter', btn => btn.getAttribute('data-cat') === 'ALL');
+                syncMainFilterButtons('#tierFilters .btn-filter', btn => btn.getAttribute('data-tier') === 'ALL');
 
                 renderCards();
 

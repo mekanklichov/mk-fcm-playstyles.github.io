@@ -66,6 +66,14 @@ function updateClearAllVisibility() {
     }
 }
 
+function syncDetailedFilterButtons(selector, isSelected) {
+    document.querySelectorAll(selector).forEach(button => {
+        const selected = isSelected(button);
+        button.classList.toggle('active', selected);
+        button.setAttribute('aria-pressed', String(selected));
+    });
+}
+
 function renderDetailedCards() {
     const grid = document.getElementById('detailedGrid');
     if (!grid) return;
@@ -196,12 +204,8 @@ function scrollToTargetPlaystyle(targetName) {
     const searchInput = document.getElementById('searchInput');
     if (searchInput) searchInput.value = '';
 
-    document.querySelectorAll('#categoryFilters .btn-filter').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-cat') === 'ALL');
-    });
-    document.querySelectorAll('#tierFilters .btn-filter').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-tier') === 'ALL');
-    });
+    syncDetailedFilterButtons('#categoryFilters .btn-filter', btn => btn.getAttribute('data-cat') === 'ALL');
+    syncDetailedFilterButtons('#tierFilters .btn-filter', btn => btn.getAttribute('data-tier') === 'ALL');
 
     renderDetailedCards();
 
@@ -257,6 +261,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 300);
 
     // Initial render
+    syncDetailedFilterButtons('#categoryFilters .btn-filter', button => button.getAttribute('data-cat') === activeCategory);
+    syncDetailedFilterButtons('#tierFilters .btn-filter', button => button.getAttribute('data-tier') === activeTier);
     renderDetailedCards();
 
     // Check URL params or hash for target playstyle
@@ -271,21 +277,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Filter handlers
     document.getElementById('categoryFilters').addEventListener('click', (e) => {
-        if (e.target.classList.contains('btn-filter')) {
-            document.querySelectorAll('#categoryFilters .btn-filter').forEach(btn => btn.classList.remove('active'));
-            e.target.classList.add('active');
-            activeCategory = e.target.getAttribute('data-cat');
-            renderDetailedCards();
-        }
+        const button = e.target.closest('.btn-filter');
+        if (!button) return;
+        activeCategory = button.getAttribute('data-cat');
+        syncDetailedFilterButtons('#categoryFilters .btn-filter', item => item === button);
+        renderDetailedCards();
     });
 
     document.getElementById('tierFilters').addEventListener('click', (e) => {
-        if (e.target.classList.contains('btn-filter')) {
-            document.querySelectorAll('#tierFilters .btn-filter').forEach(btn => btn.classList.remove('active'));
-            e.target.classList.add('active');
-            activeTier = e.target.getAttribute('data-tier');
-            renderDetailedCards();
-        }
+        const button = e.target.closest('.btn-filter');
+        if (!button) return;
+        activeTier = button.getAttribute('data-tier');
+        syncDetailedFilterButtons('#tierFilters .btn-filter', item => item === button);
+        renderDetailedCards();
     });
 
     document.getElementById('searchInput').addEventListener('input', (e) => {
@@ -327,13 +331,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (clearAllBtn) {
         clearAllBtn.addEventListener('click', () => {
             activeCategory = 'ALL';
-            document.querySelectorAll('#categoryFilters .btn-filter').forEach(btn => {
-                btn.classList.toggle('active', btn.getAttribute('data-cat') === 'ALL');
-            });
+            syncDetailedFilterButtons('#categoryFilters .btn-filter', btn => btn.getAttribute('data-cat') === 'ALL');
             activeTier = 'ALL';
-            document.querySelectorAll('#tierFilters .btn-filter').forEach(btn => {
-                btn.classList.toggle('active', btn.getAttribute('data-tier') === 'ALL');
-            });
+            syncDetailedFilterButtons('#tierFilters .btn-filter', btn => btn.getAttribute('data-tier') === 'ALL');
             const input = document.getElementById('searchInput');
             input.value = '';
             searchQuery = '';

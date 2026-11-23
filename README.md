@@ -33,7 +33,8 @@ Features an **Interactive PlayStyles Meta Tier Guide**, category and tier filter
 * **All 22 PlayStyles Analyzed**: Fully categorized across 6 tactical roles (*Finishing*, *Ball Control*, *Passing*, *Defending*, *Physical*, and *Goalkeeper*).
 * **Meta Tier Rankings (S to D)**: Graded by competitive head-to-head (H2H) impact on mobile touch controls, from S-Tier (*Overpowered*) to D-Tier (*Useless* with dark red styling).
 * **Dual Light / Dark Mode with Persistence**: Seamless theme toggle with animated Sun/Moon morphing icon, `localStorage` persistence, and automatic system OS `prefers-color-scheme` matching.
-* **Full Apple iOS Liquid Glass UI**: Multi-layer frosted glass system (`blur(40px) saturate(200%) brightness(1.08)`), dual-rim specular highlights (`inset 0 1px 0`), 0.5px sub-pixel borders, squircle geometry, and diagonal **liquid light sheen sweep** animations on card hover.
+* **Liquid Glass UI**: Translucent, softly tinted surfaces with strong backdrop blur, saturated background color, bright upper rims, and darker lower edges. Hover states stay still and restrained.
+* **Mobile-Ready Layout**: Phone-friendly spacing and readable detail pages, touch-sized controls, horizontally scrollable filter and breadcrumb rows, and safe-area-aware floating controls. Touch devices do not retain hover lift effects after taps.
 * **3-Level Perk Progression**: Comprehensive breakdown of Silver (Level 1), Gold (Level 2), and Violet (Level 3) perks for every PlayStyle.
 * **Dedicated Deep-Dive Pages**: 22 standalone pages (`src/playstyles/*.html`) detailing tactical meta fit, recommended positions, gesture executions, pro-tips, and video previews.
 * **Gesture Execution Guide**: Practical touch control instructions for every trait (swipes, taps, and skill triggers).
@@ -224,14 +225,13 @@ node build_site.js
 ## 🎨 Design System & Aesthetics
 
 * **Dual-Theme Support (Dark & Light)**:
-  - **Dark Mode (Default)**: Pitch-dark Obsidian (`#050811`, `#121826`) with stadium green and violet ambient radial lighting.
-  - **Light Mode**: Apple frosted glass aesthetic (`#f0f4f9`) with soft emerald and lilac ambient glows, dark slate typography (`#0f172a`), and high-contrast WCAG AA readability.
+  - **Dark Mode (Default)**: Deep charcoal (`#081018`) with green, cyan, and violet ambient lighting.
+  - **Light Mode**: Soft gray-green (`#f3f6f2`) with subtle emerald, blue, and lilac color fields and dark, readable typography.
   - **Animated iOS Pill Switcher**: Sun/Moon icon morphing rotation animation with instant `localStorage` persistence and `prefers-color-scheme` synchronization.
-* **Apple iOS Liquid Glass UI**:
-  - Multi-layer frosted glass: `backdrop-filter: blur(40px) saturate(200%) brightness(1.08)`.
-  - Specular rim lighting: `inset 0 1px 0 0 rgba(255, 255, 255, 0.45)`, soft sub-pixel 0.5px borders, and squircle border geometry (`20px` to `24px`).
-  - **Hover Sheen Sweep**: Diagonal liquid light sweep (`linear-gradient(105deg, ...)` via `::after`) gliding smoothly across cards on hover.
-  - Tactile spring physics: Fluid `cubic-bezier(0.16, 1, 0.3, 1)` easing and active click compressions (`scale(0.96)`).
+* **Liquid Glass UI**:
+  - Translucent surfaces use `backdrop-filter: blur(24px) saturate(175%)` with tinted gradients that let the ambient page colors show through.
+  - Static upper-edge highlights and lower-edge shadows provide depth without animated shine on hover.
+  - Reduced-transparency settings switch to solid surfaces for users who prefer less blur.
 * **Tier Color System**:
   - **S-Tier**: Obsidian Black / Charcoal (`#18181b` / `#1e293b`)
   - **A-Tier**: Champion Gold (`#fbbf24` / `#d97706`)

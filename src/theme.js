@@ -1,93 +1,93 @@
 /**
- * FC Mobile PlayStyles Guide - Theme Controller (iOS Liquid Glass System)
- * Manages dual light/dark theme with localStorage persistence and system sync.
+ * Shared theme controller for the guide and every PlayStyle detail page.
+ * The saved choice wins; otherwise the page follows the operating system.
  */
 (function () {
     'use strict';
 
     const STORAGE_KEY = 'fcm-theme';
     const THEME_ATTR = 'data-theme';
+    const colorScheme = window.matchMedia
+        ? window.matchMedia('(prefers-color-scheme: light)')
+        : null;
 
-    /**
-     * Resolves the current theme: localStorage > system preference > default dark
-     */
-    function getPreferredTheme() {
+    function readSavedTheme() {
         try {
-            const saved = localStorage.getItem(STORAGE_KEY);
-            if (saved === 'light' || saved === 'dark') return saved;
-        } catch (e) {
-            /* ignore storage block in private/file mode */
+            const saved = window.localStorage.getItem(STORAGE_KEY);
+            return saved === 'light' || saved === 'dark' ? saved : null;
+        } catch (error) {
+            return null;
         }
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-            return 'light';
-        }
-        return 'dark';
     }
 
-    /**
-     * Applies theme to document root and updates all toggle buttons
-     */
-    function applyTheme(theme) {
-        document.documentElement.setAttribute(THEME_ATTR, theme);
+    function applyTheme(theme, persist) {
+        const nextTheme = theme === 'light' ? 'light' : 'dark';
+        const isLight = nextTheme === 'light';
 
-        const buttons = document.querySelectorAll('.theme-toggle-btn');
-        buttons.forEach(btn => {
-            const isLight = theme === 'light';
-            btn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
-            btn.setAttribute('title', isLight ? 'Switch to dark theme' : 'Switch to light theme');
-            btn.setAttribute('data-active-theme', theme);
+        document.documentElement.setAttribute(THEME_ATTR, nextTheme);
+        document.documentElement.style.colorScheme = nextTheme;
+
+        document.querySelectorAll('.theme-toggle-btn').forEach(button => {
+            const action = isLight ? 'Switch to dark theme' : 'Switch to light theme';
+            button.setAttribute('aria-label', action);
+            button.setAttribute('title', action);
+            button.setAttribute('data-active-theme', nextTheme);
+            const label = button.querySelector('.theme-label');
+            if (label) label.textContent = isLight ? 'Dark mode' : 'Light mode';
         });
+
+        if (persist) {
+            try {
+                window.localStorage.setItem(STORAGE_KEY, nextTheme);
+            } catch (error) {
+                // The theme still works when storage is unavailable.
+            }
+        }
+
+        return nextTheme;
     }
 
-    /**
-     * Toggles between light and dark mode with animation
-     */
+    function getTheme() {
+        return document.documentElement.getAttribute(THEME_ATTR) || 'dark';
+    }
+
     function toggleTheme() {
-        const current = document.documentElement.getAttribute(THEME_ATTR) || 'dark';
-        const next = current === 'light' ? 'dark' : 'light';
-
-        try {
-            localStorage.setItem(STORAGE_KEY, next);
-        } catch (e) {}
-
-        applyTheme(next);
+        applyTheme(getTheme() === 'light' ? 'dark' : 'light', true);
     }
 
-    // Apply preferred theme immediately to avoid flash of wrong theme (FOUC)
-    const initialTheme = getPreferredTheme();
-    applyTheme(initialTheme);
+    // Set the theme in the head so the page paints in the right colors.
+    const savedTheme = readSavedTheme();
+    applyTheme(savedTheme || (colorScheme && colorScheme.matches ? 'light' : 'dark'), false);
 
-    // Setup interactive toggle event handlers once DOM is ready
-    function setupToggleButtons() {
-        applyTheme(document.documentElement.getAttribute(THEME_ATTR) || initialTheme);
-
-        document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
-            // Remove previous listeners if any
-            btn.removeEventListener('click', toggleTheme);
-            btn.addEventListener('click', toggleTheme);
+    function bindThemeButtons() {
+        applyTheme(getTheme(), false);
+        document.querySelectorAll('.theme-toggle-btn').forEach(button => {
+            button.addEventListener('click', toggleTheme);
         });
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setupToggleButtons);
+        document.addEventListener('DOMContentLoaded', bindThemeButtons, { once: true });
     } else {
-        setupToggleButtons();
+        bindThemeButtons();
     }
 
-    // Listen for OS system theme changes if user has no saved preference
-    if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
-            try {
-                if (localStorage.getItem(STORAGE_KEY)) return; // user explicitly chose
-            } catch (err) {}
-            applyTheme(e.matches ? 'light' : 'dark');
-        });
+    if (colorScheme) {
+        const followSystemTheme = event => {
+            if (readSavedTheme()) return;
+            applyTheme(event.matches ? 'light' : 'dark', false);
+        };
+
+        if (typeof colorScheme.addEventListener === 'function') {
+            colorScheme.addEventListener('change', followSystemTheme);
+        } else if (typeof colorScheme.addListener === 'function') {
+            colorScheme.addListener(followSystemTheme);
+        }
     }
 
-    // Expose toggle globally for inline or programmatic use
     window.fcmTheme = {
-        get: () => document.documentElement.getAttribute(THEME_ATTR) || 'dark',
-        set: applyTheme,
+        get: getTheme,
+        set: theme => applyTheme(theme, true),
         toggle: toggleTheme
     };
 })();
