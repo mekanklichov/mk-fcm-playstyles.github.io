@@ -35,11 +35,14 @@ Features an **Interactive PlayStyles Meta Tier Guide**, category and tier filter
 * **Dual Light / Dark Mode with Persistence**: Seamless theme toggle with animated Sun/Moon morphing icon, `localStorage` persistence, and automatic system OS `prefers-color-scheme` matching.
 * **Liquid Glass UI**: Translucent, softly tinted surfaces with strong backdrop blur, saturated background color, bright upper rims, and darker lower edges. Hover states stay still and restrained.
 * **Mobile-Ready Layout**: Phone-friendly spacing and readable detail pages, touch-sized controls, horizontally scrollable filter and breadcrumb rows, and safe-area-aware floating controls. Touch devices do not retain hover lift effects after taps.
+* **Compact Mobile Navigation**: A keyboard-accessible section menu replaces the horizontally scrolling navigation on smaller screens and closes after navigation or Escape.
 * **3-Level Perk Progression**: Comprehensive breakdown of Silver (Level 1), Gold (Level 2), and Violet (Level 3) perks for every PlayStyle.
 * **Dedicated Deep-Dive Pages**: 22 standalone pages (`src/playstyles/*.html`) detailing tactical meta fit, recommended positions, gesture executions, pro-tips, and video previews.
 * **Gesture Execution Guide**: Practical touch control instructions for every trait (swipes, taps, and skill triggers).
 * **Instant Diacritic-Resilient Search & Shortcuts**: Real-time filtering across names, descriptions, categories, and perks. Press `/` anywhere to focus search and `Esc` to clear.
 * **Category & Tier Filter Controls**: Filter simultaneously by category pills and tier pills with instant result counts and quick reset.
+* **Search Feedback**: Matching text is highlighted, active filters appear as removable chips, and the empty state offers a one-tap reset.
+* **Focused Detail Pages**: Each PlayStyle opens with a quick tier and position summary, followed by collapsible level details and gameplay guidance.
 * **Tactical Squad Combinations**: Optimal PlayStyle configurations for every pitch position (LW, RW, ST, CAM, CM, LM, RM, CDM, CB, LB, RB, GK) with official logos and tier badges.
 * **High-Level Accessibility**: Includes `@media (prefers-reduced-transparency: reduce)` and `@media (prefers-reduced-motion: reduce)` fallbacks, alongside WCAG AA contrast compliance for both dark and light modes.
 * **Zero Dependencies**: 100% pure vanilla HTML, modern CSS, and JavaScript. Runs directly from local filesystem (`file://`) with zero build steps or servers required.

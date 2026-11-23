@@ -432,11 +432,16 @@ playstyles.forEach((ps, idx) => {
                 </div>
             </div>
             <div class="ps-hero-desc">"${ps.desc}"</div>
+            <div class="ps-quick-summary" aria-label="PlayStyle quick summary">
+                <span>${ps.tier}-Tier PlayStyle</span>
+                <span>Best positions: ${positions.join(', ')}</span>
+            </div>
         </div>
 
         <!-- Performance Levels Showcase -->
-        <h2 class="ps-detail-section-title">Level Progression &amp; Perk Breakdown</h2>
-        <div class="ps-levels-stack">
+        <details class="ps-disclosure" open>
+            <summary>Level progression and perk breakdown</summary>
+            <div class="ps-levels-stack">
 
             <!-- Silver (Level 1) -->
             <div class="ps-level-card card-silver">
@@ -467,11 +472,13 @@ playstyles.forEach((ps, idx) => {
             <!-- Violet (Level 3) -->
             ${lvl3Html}
 
-        </div>
+            </div>
+        </details>
 
         <!-- Tactical Strategy & Analysis -->
-        <h2 class="ps-detail-section-title">Tactical Meta &amp; Squad Fit</h2>
-        <div class="ps-tactics-stack">
+        <details class="ps-disclosure">
+            <summary>Gameplay tips and squad fit</summary>
+            <div class="ps-tactics-stack">
 
             <!-- Recommended Positions -->
             <div class="ps-tactic-card card-cyan">
@@ -565,7 +572,8 @@ playstyles.forEach((ps, idx) => {
             <!-- Combos Featuring -->
             ${combosHtml}
 
-        </div>
+            </div>
+        </details>
 
         <!-- Related Playstyles in Category -->
         ${relatedHtml}

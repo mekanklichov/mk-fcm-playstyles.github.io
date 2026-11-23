@@ -46,7 +46,10 @@
     <nav class="sticky-nav" id="stickyNav" aria-label="Section navigation">
         <div class="nav-inner">
             <span class="nav-brand">FCM Playstyles &bull; Details</span>
-            <div class="nav-links">
+            <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mainNavLinks" aria-label="Open section navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links" id="mainNavLinks">
                 <a href="../index.html" class="nav-link">&larr; Main Guide</a>
                 <a href="../index.html#tier-list" class="nav-link">Tier List</a>
                 <a href="../index.html#combos" class="nav-link">Combos</a>
@@ -128,11 +131,16 @@
                 </div>
             </div>
 
-            <button class="btn-clear-all" id="clearAllFilters" type="button">&#10005; Clear All Filters</button>
         </div>
 
-        <!-- Result Count -->
-        <div class="result-count" id="resultCount" aria-live="polite"></div>
+        <!-- Result count and removable active filters -->
+        <div class="results-summary">
+            <div class="result-summary-copy">
+                <div class="result-count" id="resultCount" aria-live="polite"></div>
+                <div class="active-filters" id="activeFilters" role="group" aria-label="Active filters"></div>
+            </div>
+            <button class="btn-clear-all" id="clearAllFilters" type="button">Clear filters</button>
+        </div>
 
         <!-- Detailed Playstyles Grid -->
         <div class="playstyles-grid" id="detailedGrid" role="list" aria-label="Detailed playstyle perk cards"></div>

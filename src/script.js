@@ -274,12 +274,79 @@ const playstylesData = [
         // Show/hide the "Clear All Filters" button
         function updateClearAllVisibility() {
             const btn = document.getElementById('clearAllFilters');
-            if (!btn) return;
-            if (activeCategory === 'ALL' && activeTier === 'ALL' && searchQuery === '') {
-                btn.classList.remove('visible');
-            } else {
-                btn.classList.add('visible');
+            const isFiltered = activeCategory !== 'ALL' || activeTier !== 'ALL' || searchQuery !== '';
+            if (btn) {
+                btn.classList.toggle('visible', isFiltered);
             }
+            updateActiveFilters();
+        }
+
+        function updateActiveFilters() {
+            const container = document.getElementById('activeFilters');
+            if (!container) return;
+            container.replaceChildren();
+
+            const active = [];
+            if (activeCategory !== 'ALL') {
+                const button = Array.from(document.querySelectorAll('#categoryFilters [data-cat]')).find(item => item.dataset.cat === activeCategory);
+                active.push({ key: 'category', value: button ? button.textContent.trim() : activeCategory });
+            }
+            if (activeTier !== 'ALL') active.push({ key: 'tier', value: `${activeTier}-Tier` });
+            if (searchQuery) active.push({ key: 'search', value: `Search: ${searchQuery}` });
+
+            active.forEach(filter => {
+                const chip = document.createElement('span');
+                chip.className = 'active-filter-chip';
+                const label = document.createElement('span');
+                label.textContent = filter.value;
+                const remove = document.createElement('button');
+                remove.type = 'button';
+                remove.dataset.removeFilter = filter.key;
+                remove.setAttribute('aria-label', `Remove ${filter.value} filter`);
+                remove.textContent = '×';
+                chip.append(label, remove);
+                container.append(chip);
+            });
+        }
+
+        function escapeHTML(value) {
+            return String(value).replace(/[&<>"']/g, char => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            })[char]);
+        }
+
+        function highlightMatch(value, query) {
+            const escapedValue = escapeHTML(value);
+            const terms = query.trim().split(/\s+/).filter(Boolean);
+            if (!terms.length) return escapedValue;
+            const pattern = terms.map(term => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+            return escapedValue.replace(new RegExp(`(${pattern})`, 'gi'), '<mark>$1</mark>');
+        }
+
+        function clearOneFilter(key) {
+            if (key === 'category') {
+                activeCategory = 'ALL';
+                syncMainFilterButtons('#categoryFilters .btn-filter', btn => btn.dataset.cat === 'ALL');
+            } else if (key === 'tier') {
+                activeTier = 'ALL';
+                syncMainFilterButtons('#tierFilters .btn-filter', btn => btn.dataset.tier === 'ALL');
+            } else if (key === 'search') {
+                searchQuery = '';
+                const input = document.getElementById('searchInput');
+                if (input) input.value = '';
+            }
+            renderCards();
+        }
+
+        function clearFilters() {
+            activeCategory = 'ALL';
+            activeTier = 'ALL';
+            searchQuery = '';
+            const input = document.getElementById('searchInput');
+            if (input) input.value = '';
+            syncMainFilterButtons('#categoryFilters .btn-filter', btn => btn.dataset.cat === 'ALL');
+            syncMainFilterButtons('#tierFilters .btn-filter', btn => btn.dataset.tier === 'ALL');
+            renderCards();
         }
 
         function renderCards() {
@@ -307,17 +374,15 @@ const playstylesData = [
             updateResultCount(filtered.length);
             updateClearAllVisibility();
 
-            // Toggle search clear button visibility
             const clearBtn = document.getElementById('searchClear');
-            if (clearBtn) {
-                clearBtn.style.display = searchQuery ? 'flex' : 'none';
-            }
+            if (clearBtn) clearBtn.style.display = searchQuery ? 'flex' : 'none';
 
             if (filtered.length === 0) {
                 grid.innerHTML = `
-                    <div class="no-results">
-                        <h3>No Playstyles Found</h3>
-                        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Try adjusting your filters or search terms.</p>
+                    <div class="no-results" role="status">
+                        <h3>No PlayStyles found</h3>
+                        <p>Try another search or remove one of the active filters.</p>
+                        <button class="empty-state-reset" type="button">Clear search and filters</button>
                     </div>
                 `;
                 return;
@@ -338,32 +403,29 @@ const playstylesData = [
 
                 card.innerHTML = `
                     <div class="ps-card-top">
-                        <img class="ps-logo-64" src="${logo64}" alt="${ps.name} Logo">
+                        <img class="ps-logo-64" src="${logo64}" alt="${ps.name} logo">
                         <div class="ps-header-info">
-                            <div class="ps-name">${ps.name}</div>
+                            <div class="ps-name">${highlightMatch(ps.name, searchQuery)}</div>
                             <div class="ps-badges">
                                 <span class="badge-cat">${ps.category}</span>
                                 <span class="badge-tier tier-${ps.tier}">${tierDisplay}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="ps-desc">"${ps.desc}"</div>
+                    <div class="ps-desc">“${highlightMatch(ps.desc, searchQuery)}”</div>
                     <div class="ps-card-action">
-                        <span class="view-details-btn">Details &rarr;</span>
+                        <span class="view-details-btn">View details <span aria-hidden="true">→</span></span>
                     </div>
                 `;
 
                 const targetUrl = `${playstylesPrefix}${getPlaystyleSlug(ps.name)}.html`;
-                card.addEventListener('click', () => {
-                    window.location.href = targetUrl;
-                });
-                card.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
+                card.addEventListener('click', () => { window.location.href = targetUrl; });
+                card.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
                         window.location.href = targetUrl;
                     }
                 });
-
                 grid.appendChild(card);
             });
         }
@@ -472,18 +534,41 @@ const playstylesData = [
             // ── Clear All Filters ──
             const clearAllBtn = document.getElementById('clearAllFilters');
             if (clearAllBtn) {
-                clearAllBtn.addEventListener('click', () => {
-                    // Reset category
-                    activeCategory = 'ALL';
-                    syncMainFilterButtons('#categoryFilters .btn-filter', btn => btn.getAttribute('data-cat') === 'ALL');
-                    // Reset tier
-                    activeTier = 'ALL';
-                    syncMainFilterButtons('#tierFilters .btn-filter', btn => btn.getAttribute('data-tier') === 'ALL');
-                    // Reset search
-                    const input = document.getElementById('searchInput');
-                    input.value = '';
-                    searchQuery = '';
-                    renderCards();
+                clearAllBtn.addEventListener('click', clearFilters);
+            }
+
+            const activeFilters = document.getElementById('activeFilters');
+            if (activeFilters) {
+                activeFilters.addEventListener('click', event => {
+                    const removeButton = event.target.closest('[data-remove-filter]');
+                    if (removeButton) clearOneFilter(removeButton.dataset.removeFilter);
+                });
+            }
+
+            document.getElementById('playstylesGrid').addEventListener('click', event => {
+                if (event.target.closest('.empty-state-reset')) clearFilters();
+            });
+
+            const nav = document.getElementById('stickyNav');
+            const navToggle = nav && nav.querySelector('.mobile-nav-toggle');
+            if (nav && navToggle) {
+                const setMenuOpen = open => {
+                    nav.classList.toggle('menu-open', open);
+                    navToggle.setAttribute('aria-expanded', String(open));
+                    navToggle.setAttribute('aria-label', open ? 'Close section navigation' : 'Open section navigation');
+                };
+                navToggle.addEventListener('click', () => {
+                    setMenuOpen(navToggle.getAttribute('aria-expanded') !== 'true');
+                });
+                nav.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
+                document.addEventListener('click', event => {
+                    if (!nav.contains(event.target)) setMenuOpen(false);
+                });
+                document.addEventListener('keydown', event => {
+                    if (event.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+                        setMenuOpen(false);
+                        navToggle.focus();
+                    }
                 });
             }
 

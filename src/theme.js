@@ -33,7 +33,7 @@
             button.setAttribute('title', action);
             button.setAttribute('data-active-theme', nextTheme);
             const label = button.querySelector('.theme-label');
-            if (label) label.textContent = isLight ? 'Dark mode' : 'Light mode';
+            if (label) label.textContent = isLight ? 'Light mode' : 'Dark mode';
         });
 
         if (persist) {
